@@ -11,6 +11,17 @@ public class GameManager : MonoBehaviour {
 	
 	void Update ()
     {
-		
-	}
+        DebugTools();
+    }
+
+    private void DebugTools()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+                Cursor.lockState = CursorLockMode.None;
+            else if (Cursor.lockState == CursorLockMode.None)
+                Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 }
