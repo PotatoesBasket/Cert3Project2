@@ -6,16 +6,21 @@ public class CharacterMovement : MonoBehaviour {
 
     //Enables the player to move and jump.
 
-    private CharacterController cc;
-    public float inputDelay = 0.1f;
+    private Transform player;
+    private CharacterController controller;
 
-    public float speed = 10f;
-    public float gravity = 20f;
-    public float jumpSpeed = 10f;
+    public float forwardSpeed = 10f;
+    public float strafeSpeed = 8f;
+
+    public float gravity = 30f;
+    private bool canJump = false;
+    private bool isJumping = false;
+    private bool isFalling = false;
 
     private void Awake()
     {
-        cc = GetComponent<CharacterController>();
+        player = GetComponent<Transform>();
+        controller = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -24,17 +29,36 @@ public class CharacterMovement : MonoBehaviour {
         Jump();
     }
 
-    private void Move() //Move character, up/down = forward/backward, left/right = strafe.
+    private void Move() //Move character, up/down = forward/backward, left/right = strafe. Rotation is controlled by FirstPersonCamera.cs.
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        cc.Move(move * speed * Time.deltaTime);
+        float zMove = Input.GetAxis("Vertical");
+        float xMove = Input.GetAxis("Horizontal");
+
+        Vector3 moveForward = player.forward * zMove * forwardSpeed * Time.deltaTime;
+        Vector3 moveStrafe = player.right * xMove * strafeSpeed * Time.deltaTime;
+
+        controller.Move(moveForward + moveStrafe);
     }
 
-    private void Jump() //Jump.
+    //WIP
+    private void Jump() //Jumping and gravity effect.
     {
-        if (cc.isGrounded && Input.GetButtonDown("Jump"))
-        {
+        float jumpInput = 0;
+        float maxJumpInput = 20;
 
+        if (controller.isGrounded)
+            canJump = true;
+
+        if (Input.GetButton("Jump") && jumpInput <= maxJumpInput)
+        {
+            jumpInput += Time.deltaTime;
         }
+        else
+        {
+            jumpInput -= Time.deltaTime;
+        }
+
+        Vector3 move = new Vector3(0, -gravity, 0);
+        controller.Move(move * Time.deltaTime);
     }
 }

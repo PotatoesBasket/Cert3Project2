@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour {
 
-    //Controls the main game camera with the mouse.
+    //Controls the main game camera with the mouse. Affects the player's x-axis.
 
     private GameObject player;
     private Vector3 mouse;
@@ -25,7 +25,7 @@ public class FirstPersonCamera : MonoBehaviour {
         MouseMovement();
     }
 
-    private void MouseMovement()
+    private void MouseMovement() //Rotates the camera with the mouse's axes and applies smoothing, limits the y rotation. Rotates the player's x-axis to match the camera.
     {
         var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
@@ -37,6 +37,6 @@ public class FirstPersonCamera : MonoBehaviour {
         mouse.y = Mathf.Clamp(mouse.y, minRotation, maxRotation);
 
         transform.localRotation = Quaternion.AngleAxis(-mouse.y, Vector3.right);
-        player.transform.localRotation = Quaternion.AngleAxis(mouse.x, player.transform.up);
+        player.transform.rotation = Quaternion.AngleAxis(mouse.x, player.transform.up);
     }
 }
