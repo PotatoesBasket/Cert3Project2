@@ -7,6 +7,8 @@ TagManager:
   - Item_Moveable
   - Item_ObtainOnCollide
   - Item_ObtainOnClick
+  - ItemInHand
+  - GameManager
   layers:
   - Default
   - TransparentFX
