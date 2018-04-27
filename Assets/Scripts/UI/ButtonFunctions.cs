@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
 
     public void Awake()
     {
@@ -16,6 +16,8 @@ public class ButtonFunctions : MonoBehaviour
     public void StartButton()
     {
         gameManager.gameState = GameManager.GameState.Game;
+        SceneManager.LoadScene(gameManager.gameToBeLoaded);
+        SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
     }
 
     public void SettingsButton()

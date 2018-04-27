@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowRotation : MonoBehaviour
+public class Golf_ArrowRotation : MonoBehaviour
 {
+    //Makes the arrow move back and forth.
+
     public GameObject arrow;
     public float rotationAngle;
     private float arrowSpeed = 50f;

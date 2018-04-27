@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -10,10 +11,15 @@ public class GameManager : MonoBehaviour
 
     public static GameManager gameManager;
 
-    public float timeLimit;
-    public float gameSpeed;
+    public float timeLimit = 8f;
+    public float gameSpeed = 1f;
     public int lives = 3;
+    public int score = 0;
+    public string command;
+
     public bool completedGoal = false;
+    public bool gameOver = false;
+    public bool newGame = true;
     public bool switchGame = false;
     public string gameToBeLoaded;
 
@@ -22,7 +28,7 @@ public class GameManager : MonoBehaviour
         TitleScreen,
         Game,
         Pause,
-        Transition
+        HUD
     }
 
     public GameState gameState;
@@ -31,8 +37,7 @@ public class GameManager : MonoBehaviour
     {
         Golf,
         Car,
-        Butt,
-        Butt2
+        Catch
     }
 
     public MinigameList prevGame;
@@ -42,16 +47,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         KeepGameManager();
-
-        if (gameState != GameState.TitleScreen)
-            gameState = GameState.TitleScreen;
-
-        nextGame = GetRandomEnum<MinigameList>();
+        nextGame = GetRandomGame<MinigameList>();
+        gameToBeLoaded = nextGame.ToString();
     }
 
     private void Update()
     {
-        StateSwitch();
         GameSwitch();
         DebugTools();
     }
@@ -66,58 +67,37 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void StateSwitch() //Handles switching of game states.
-    {
-        switch (gameState)
-        {
-            case GameState.TitleScreen:
-                SceneManager.LoadScene("Title Screen");
-                break;
-
-            case GameState.Game:
-                SceneManager.LoadScene(gameToBeLoaded);
-                break;
-
-            case GameState.Transition:
-                SceneManager.LoadScene("Transition", LoadSceneMode.Additive);
-                break;
-
-            case GameState.Pause:
-                SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
-                break;
-        }
-    }
-
     private void GameSwitch() //Handles switching of minigames.
     {
-        if (gameState == GameState.Game)
+        if (newGame == true)
         {
             prevGame = currentGame;
             switchGame = true;
 
             if (switchGame == true)
             {
-                nextGame = GetRandomEnum<MinigameList>();
+                nextGame = GetRandomGame<MinigameList>();
+                if (nextGame == currentGame)
+                    nextGame += 1;
                 switchGame = false;
             }
 
-            if (nextGame == currentGame)
-                nextGame += 1;
-        }
-        if (gameState == GameState.Transition)
-        {
-            currentGame = nextGame;
-            gameToBeLoaded = nextGame.ToString();
-        }
+            if (switchGame == false)
+            {
+                currentGame = nextGame;
+                gameToBeLoaded = nextGame.ToString();
+            }
 
-        switch (currentGame)
-        {
-            case MinigameList.Golf:
-                break;
+            newGame = false;
         }
     }
 
-    static MinigameList GetRandomEnum<MinigameList>() //Picks a random minigame.
+    public void GameTimer()
+    {
+
+    }
+
+    static MinigameList GetRandomGame<MinigameList>() //Picks a random minigame.
     {
         Array array = Enum.GetValues(typeof(MinigameList));
         MinigameList value = (MinigameList)array.GetValue(UnityEngine.Random.Range(0, array.Length));

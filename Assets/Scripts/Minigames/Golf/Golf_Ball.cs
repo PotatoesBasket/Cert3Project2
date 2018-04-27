@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolfBall : MonoBehaviour
+public class Golf_Ball : MonoBehaviour
 {
+    //Shoots ball in the same direction as the arrow (Golf_ArrowRotation).
+
     public GameObject ball;
     public GameObject arrow;
-    public ArrowRotation rotation;
+    public Golf_ArrowRotation rotation;
 
     void Start()
     {
-        rotation = arrow.GetComponent<ArrowRotation>();
+        rotation = arrow.GetComponent<Golf_ArrowRotation>();
     }
 
     private void Update()

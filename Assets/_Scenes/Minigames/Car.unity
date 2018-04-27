@@ -157,7 +157,6 @@ GameObject:
   - component: {fileID: 239822843}
   - component: {fileID: 239822847}
   - component: {fileID: 239822848}
-  - component: {fileID: 239822849}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -261,12 +260,28 @@ MonoBehaviour:
   rigid: {fileID: 239822847}
   speed: 20
   turnSpeed: 100
---- !u!114 &239822849
+--- !u!1 &445497753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 445497755}
+  - component: {fileID: 445497754}
+  m_Layer: 0
+  m_Name: Minigame Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &445497754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 239822842}
+  m_GameObject: {fileID: 445497753}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b171850efbf282740a776e5331f18806, type: 3}
@@ -275,6 +290,19 @@ MonoBehaviour:
   car: {fileID: 239822847}
   leftBoundary: {fileID: 1691051601}
   rightBoundary: {fileID: 2052259901}
+--- !u!4 &445497755
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445497753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304300565
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +486,60 @@ Transform:
   m_Father: {fileID: 239822846}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 39.8, y: 0, z: 0}
+--- !u!1 &1519356622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1519356624}
+  - component: {fileID: 1519356623}
+  m_Layer: 0
+  m_Name: Debug Game Manager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1519356623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1519356622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e205e5f3823a94188515d6304af27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 0
+  gameSpeed: 0
+  lives: 0
+  score: 0
+  command: 
+  completedGoal: 0
+  gameOver: 0
+  newGame: 1
+  switchGame: 0
+  gameToBeLoaded: 
+  gameState: 0
+  prevGame: 0
+  currentGame: 0
+  nextGame: 0
+--- !u!4 &1519356624
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1519356622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1691051599
 GameObject:
   m_ObjectHideFlags: 0
