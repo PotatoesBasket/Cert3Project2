@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Catch_Manager : MonoBehaviour
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
+    public Rigidbody plate;
+    public Rigidbody food;
 
     private void Awake()
     {

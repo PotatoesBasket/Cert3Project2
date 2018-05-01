@@ -7,6 +7,7 @@ public class HUD : MonoBehaviour
 {
     //Gets lives, score, and command from the GameManager. Command is sent to GameManager from each MinigameManager.
 
+    private HUD hud;
     private GameManager gameManager;
     public Text command;
     public Text lives;
@@ -14,6 +15,7 @@ public class HUD : MonoBehaviour
 
     public void Awake()
     {
+        KeepHUD();
         GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
         gameManager = gm.GetComponent<GameManager>();
     }
@@ -23,5 +25,19 @@ public class HUD : MonoBehaviour
         command.text = gameManager.command;
         lives.text = gameManager.lives.ToString();
         score.text = gameManager.score.ToString();
+    }
+
+    public void ResetAnimation()
+    {
+    }
+
+    private void KeepHUD() //Keeps the HUD across scenes.
+    {
+        if (hud == null)
+            hud = this;
+        else if (hud != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
 }

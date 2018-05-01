@@ -10,6 +10,7 @@ public class Car_AutoDrive : MonoBehaviour
 
     public Rigidbody rigid;
 
+    public bool on = true;
     public float speed = 20.0f;
     public float turnSpeed = 100.0f;
     private float turnInput;
@@ -21,8 +22,11 @@ public class Car_AutoDrive : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        Turn();
+        if (on == true)
+        {
+            Move();
+            Turn();
+        }
     }
 
     private void Move()

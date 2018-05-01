@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstPersonCamera : MonoBehaviour
+public class Zombie_Camera : MonoBehaviour
 {
     //Controls the camera with the mouse. Affects the parent's x-axis.
 

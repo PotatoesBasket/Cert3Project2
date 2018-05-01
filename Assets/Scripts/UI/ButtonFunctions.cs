@@ -16,7 +16,7 @@ public class ButtonFunctions : MonoBehaviour
     public void StartButton()
     {
         gameManager.gameState = GameManager.GameState.Game;
-        SceneManager.LoadScene(gameManager.gameToBeLoaded);
+        gameManager.SwitchGame();
         SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
     }
 

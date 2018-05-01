@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 1636834400}
   - component: {fileID: 1636834399}
   - component: {fileID: 1636834398}
+  - component: {fileID: 1636834401}
   m_Layer: 5
   m_Name: Command
   m_TagString: Untagged
@@ -621,6 +622,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636834396}
+--- !u!111 &1636834401
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636834396}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c6f9b2807ae093f4f8a6799ceca01d0d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c6f9b2807ae093f4f8a6799ceca01d0d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1798705769
 GameObject:
   m_ObjectHideFlags: 0

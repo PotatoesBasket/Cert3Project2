@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Car_Manager : MonoBehaviour
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
     public Rigidbody car;
     public Rigidbody leftBoundary;
     public Rigidbody rightBoundary;
@@ -19,13 +19,6 @@ public class Car_Manager : MonoBehaviour
     {
         gameManager.completedGoal = true;
         gameManager.command = "Avoid!";
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.rigidbody.Equals(leftBoundary) || collision.rigidbody.Equals(rightBoundary))
-        {
-            gameManager.completedGoal = false;
-        }
+        gameManager.gameOver = false;
     }
 }
