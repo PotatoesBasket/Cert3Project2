@@ -10,6 +10,7 @@ TagManager:
   - ItemInHand
   - GameManager
   - MiniManager
+  - Collision
   layers:
   - Default
   - TransparentFX

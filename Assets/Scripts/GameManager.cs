@@ -8,14 +8,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //Contains debug tools. Remove before release.
+    //Contains TO DOs.
 
     public static GameManager gameManager;
 
-    public float timeLimit = 8f;
-    public float gameTimer = 0f;
-    public float gameSpeed = 1f;
-    public int lives = 3;
-    public int score = 0;
+    public float timeLimit;
+    public float gameTimer;
+    public float gameSpeed;
+    public int lives;
+    public int score;
+    public int freeLifeCounter;
     public string command;
 
     public bool completedGoal = false;
@@ -52,17 +54,35 @@ public class GameManager : MonoBehaviour
         gameToBeLoaded = nextGame.ToString();
     }
 
+    private void Start()
+    {
+        timeLimit = 5f;
+        gameTimer = 0f;
+        gameSpeed = 1.0f;
+        lives = 3;
+        score = 0;
+        freeLifeCounter = 0;
+    }
+
     private void Update()
     {
+        FreeLife();
+        OnGameFinish();
         GameTimer();
         DebugTools();
     }
 
+    
+    //-----Call Elsewhere-----//
+
     public void SwitchGame() //Loads queued minigame and determines the one to play next without picking a recent one.
     {
-        bool generateNextGame;
-
+        gameOver = false;
+        gameTimer = 0f;
+        gameSpeed += 0.01f;
         prevGame = currentGame;
+
+        bool generateNextGame;
         generateNextGame = false;
 
         if (generateNextGame == false)
@@ -72,7 +92,7 @@ public class GameManager : MonoBehaviour
             generateNextGame = true;
         }
 
-        if (generateNextGame == true)
+        if (generateNextGame == true) //TO DO: make better.
         {
             nextGame = GetRandomGame<MinigameList>();
             if (nextGame == prevGame)
@@ -87,22 +107,53 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public void AddToScore() //Adds 1 to score and free life counter.
     {
-        if (gameOver == true)
+        score += 1;
+        freeLifeCounter += 1;
+    }
+
+    public void LoseLife() //Minus 1 life.
+    {
+        lives -= 1;
+    }
+
+
+    //-----Call in Update()-----//
+
+    public void FreeLife() //Adds a life after 25 wins.
+    {
+        if (freeLifeCounter == 25)
         {
-            gameTimer = 0f;
+            lives += 1;
+            freeLifeCounter = 0;
         }
     }
 
-    public void GameTimer()
+    public void GameTimer() //Keeps a timer that determines how long each game lasts. Speeds up as the game progresses.
     {
-        if (gameTimer < timeLimit)
-            gameTimer += Time.deltaTime;
-        
-        if (gameTimer == timeLimit)
-            gameTimer = 0f;
+        gameTimer += gameSpeed * Time.deltaTime;
+
+        if (gameTimer >= timeLimit)
+            gameOver = true;
     }
+
+    public void OnGameFinish() //Adds to score/minus life depending on completedGoal bool when game ends.
+    {
+        if (gameOver == true)
+        {
+            if (completedGoal == true)
+                AddToScore();
+            if (completedGoal == false)
+                LoseLife();
+
+            //SwitchGame();
+        }
+        //TO DO: if lives = 0, end game.
+    }
+
+
+    //-----Don't worry about these rn-----//
 
     private void KeepGameManager() //Keeps the GameManager across scenes.
     {
@@ -132,8 +183,12 @@ public class GameManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown("p"))
-        {
             SwitchGame();
-        }
+
+        if (Input.GetKeyDown("o"))
+            AddToScore();
+
+        if (Input.GetKeyDown("i"))
+            LoseLife();
     }
 }

@@ -301,19 +301,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Downloads\RootVegetables\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Minigames\Car\Scripts\Car_AutoDrive.cs" />
+    <Compile Include="Assets\Minigames\Car\Scripts\Car_Collision.cs" />
+    <Compile Include="Assets\Minigames\Car\Scripts\Car_EnemyMovement.cs" />
+    <Compile Include="Assets\Minigames\Car\Scripts\Car_EnemySpawn.cs" />
+    <Compile Include="Assets\Minigames\Car\Scripts\Car_Manager.cs" />
+    <Compile Include="Assets\Minigames\Catch\Scripts\Catch_Manager.cs" />
+    <Compile Include="Assets\Minigames\Catch\Scripts\Catch_Win.cs" />
+    <Compile Include="Assets\Minigames\Golf\Scripts\Golf_ArrowRotation.cs" />
+    <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Ball.cs" />
+    <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Hole.cs" />
+    <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Manager.cs" />
+    <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Manager.cs" />
+    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Camera.cs" />
+    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_EnemyMovement.cs" />
+    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Manager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Car\Car_AutoDrive.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Car\Car_Collision.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Car\Car_Manager.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Catch\Catch_Manager.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Catch\Catch_Win.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Golf\Golf_ArrowRotation.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Golf\Golf_Ball.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Golf\Golf_Hole.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Golf\Golf_Manager.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Pong\Pong_Manager.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Zombie\Zombie_Camera.cs" />
-    <Compile Include="Assets\Scripts\Minigames\Zombie\Zombie_Manager.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonFunctions.cs" />
     <Compile Include="Assets\Scripts\UI\HUD.cs" />
     <Compile Include="Assets\Scripts\WIP\CharacterMovement.cs" />

@@ -27,10 +27,6 @@ public class HUD : MonoBehaviour
         score.text = gameManager.score.ToString();
     }
 
-    public void ResetAnimation()
-    {
-    }
-
     private void KeepHUD() //Keeps the HUD across scenes.
     {
         if (hud == null)
