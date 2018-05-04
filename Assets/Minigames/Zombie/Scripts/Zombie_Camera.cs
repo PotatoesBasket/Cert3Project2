@@ -6,6 +6,7 @@ public class Zombie_Camera : MonoBehaviour
 {
     //Controls the camera with the mouse. Affects the parent's x-axis.
 
+    private Zombie_Manager manager;
     private GameObject cameraParent;
     private Vector3 mouse;
     private Vector3 smooth;
@@ -18,6 +19,12 @@ public class Zombie_Camera : MonoBehaviour
     public float minRotationY;
     public float maxRotationY;
 
+    private void Awake()
+    {
+        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
+        manager = m.GetComponent<Zombie_Manager>();
+    }
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -26,9 +33,12 @@ public class Zombie_Camera : MonoBehaviour
 
     private void Update()
     {
-        MovementCalculation();
-        RotationLimits();
-        CameraRotation();
+        if (manager.canMove == true)
+        {
+            MovementCalculation();
+            RotationLimits();
+            CameraRotation();
+        }
     }
 
     private Vector3 MovementCalculation() //Takes mouse input and adjusts according to smoothing and sensitivity values.

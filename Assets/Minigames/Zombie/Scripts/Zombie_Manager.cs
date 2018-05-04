@@ -5,6 +5,10 @@ using UnityEngine;
 public class Zombie_Manager : MonoBehaviour
 {
     private GameManager gameManager;
+    public GameObject[] zombies;
+    public bool canMove;
+    public bool isHit;
+    public float GameSpeed { get { return gameManager.gameSpeed; } }
 
     private void Awake()
     {
@@ -14,8 +18,35 @@ public class Zombie_Manager : MonoBehaviour
 
     private void Start()
     {
-        gameManager.command = "Survive!";
-        gameManager.completedGoal = true;
+        gameManager.command = "Shoot 'em!";
+        gameManager.completedGoal = false;
         gameManager.gameOver = false;
+        canMove = true;
+    }
+
+    private void Update()
+    {
+        if (AllZombiesDead() == true)
+        {
+            gameManager.completedGoal = true;
+        }
+    }
+
+    private void SpawnEnemies()
+    {
+
+    }
+
+    private bool AllZombiesDead()
+    {
+        int numberOfZombies = 0;
+
+        foreach (GameObject zombie in zombies)
+        {
+            if (isHit == false)
+                numberOfZombies++;
+        }
+
+        return (numberOfZombies == 0);
     }
 }

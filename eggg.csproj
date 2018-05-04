@@ -314,8 +314,10 @@
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Manager.cs" />
     <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Manager.cs" />
     <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Camera.cs" />
-    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_EnemyMovement.cs" />
+    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Enemy.cs" />
+    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_GunMovement.cs" />
     <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Manager.cs" />
+    <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Shooting.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonFunctions.cs" />
     <Compile Include="Assets\Scripts\UI\HUD.cs" />
