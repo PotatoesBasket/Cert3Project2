@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Minigames/Zombie/Zombie.unity
+- path: Assets/Minigames/Pong/Pong.unity
   isLoaded: 1
   isActive: 1

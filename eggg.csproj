@@ -301,6 +301,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Downloads\RootVegetables\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Minigames\Car\Scripts\Car_AutoDrive.cs" />
     <Compile Include="Assets\Minigames\Car\Scripts\Car_Collision.cs" />
     <Compile Include="Assets\Minigames\Car\Scripts\Car_EnemyMovement.cs" />
@@ -312,7 +321,10 @@
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Ball.cs" />
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Hole.cs" />
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Manager.cs" />
+    <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Ball.cs" />
+    <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Enemy.cs" />
     <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Manager.cs" />
+    <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Paddle.cs" />
     <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Camera.cs" />
     <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Enemy.cs" />
     <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_GunMovement.cs" />
@@ -323,8 +335,15 @@
     <Compile Include="Assets\Scripts\UI\HUD.cs" />
     <Compile Include="Assets\Scripts\WIP\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\WIP\InteractionDetection.cs" />
-    <Compile Include="Assets\Scripts\WIP\Pong\BallMovement.cs" />
-    <Compile Include="Assets\Scripts\WIP\Pong\PaddleMovement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

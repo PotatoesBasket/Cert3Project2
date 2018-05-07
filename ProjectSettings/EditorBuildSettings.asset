@@ -6,26 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Title Screen.unity
+    path: Assets/Scenes/Title Screen.unity
     guid: 7dbe8b556e8020f4899e6f9cccda68e2
   - enabled: 1
-    path: Assets/_Scenes/HUD.unity
+    path: Assets/Scenes/HUD.unity
     guid: f1d75ed3317228541acd60cb8b73074b
   - enabled: 1
-    path: Assets/_Scenes/Pause.unity
+    path: Assets/Scenes/Pause.unity
     guid: 6f9c022fae37c16459477128a437888f
   - enabled: 1
-    path: Assets/_Scenes/Minigames/Golf.unity
+    path: Assets/Minigames/Golf/Golf.unity
     guid: d7c1226a14cf46149b1d129d2bc88a64
   - enabled: 1
-    path: Assets/_Scenes/Minigames/Car.unity
+    path: Assets/Minigames/Car/Car.unity
     guid: def8cd2cab8096448b19a877eb65da17
   - enabled: 1
-    path: Assets/_Scenes/Minigames/Catch.unity
+    path: Assets/Minigames/Catch/Catch.unity
     guid: 6d6e16ad308f9b14ea1931f55a74ec06
   - enabled: 1
-    path: Assets/_Scenes/Minigames/Zombie.unity
+    path: Assets/Minigames/Zombie/Zombie.unity
     guid: cde3c9a3cc3bc7948a0ad8718679a6d9
   - enabled: 1
-    path: Assets/_Scenes/Minigames/Pong.unity
+    path: Assets/Minigames/Pong/Pong.unity
     guid: f6f592734a2a8524b88112a67e75339c

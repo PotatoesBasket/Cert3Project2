@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int freeLifeCounter;
     public string command;
 
+    public bool playCommandAni = false;
     public bool completedGoal = false;
     public bool gameOver = false;
     public string gameToBeLoaded;
@@ -77,9 +78,10 @@ public class GameManager : MonoBehaviour
 
     public void SwitchGame() //Loads queued minigame and determines the one to play next without picking a recent one.
     {
+        playCommandAni = true;
         gameOver = false;
         gameTimer = 0f;
-        gameSpeed += 0.01f;
+        gameSpeed += 0.02f;
         prevGame = currentGame;
 
         bool generateNextGame;

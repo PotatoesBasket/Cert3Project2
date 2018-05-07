@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Zombie_Shooting : MonoBehaviour
 {
+    //Kills the enemy when it is hit by the raycast and a button is pressed.
+
+    //Contains debug tools.
+
     private RaycastHit hit;
-    private Zombie_Manager manager;
     private GameObject inRange;
     private float rayDistance = 50;
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Zombie_Manager>();
         inRange = null;
     }
 
@@ -31,7 +32,7 @@ public class Zombie_Shooting : MonoBehaviour
             inRange = null;
     }
 
-    private void Shoot()
+    private void Shoot() //Sets isHit on enemy to true.
     {
         if (Input.GetButtonDown("Fire1") && inRange != null)
         {

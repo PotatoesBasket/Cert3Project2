@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Zombie_Enemy : MonoBehaviour
 {
-    //Makes the enemy walk toward the player at a speed affected by overall game speed.
+    //Controls enemy movement and animations. Enemy moves toward player automatically until killed.
 
     private Zombie_Manager manager;
     private GameObject player;
@@ -32,6 +32,9 @@ public class Zombie_Enemy : MonoBehaviour
 
         initialNavSpeed = navAgent.speed;
         initialAniSpeed = animator.speed;
+
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+        animator.Play(state.fullPathHash, -1, Random.Range(0f, 1f));
     }
 
     private void Update()

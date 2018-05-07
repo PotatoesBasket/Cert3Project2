@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pong_Manager : MonoBehaviour
 {
     private GameManager gameManager;
+    public float GameSpeed { get { return gameManager.gameSpeed; } }
 
     private void Awake()
     {
