@@ -6,7 +6,7 @@ public class Pong_Ball : MonoBehaviour
 {
     private Pong_Manager manager;
     private Rigidbody ball;
-    private float ballForce = 500;
+    private float ballForce = 1000;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class Pong_Ball : MonoBehaviour
     private void Start()
     {
         ball = GetComponent<Rigidbody>();
-        Vector2 direction = Random.insideUnitCircle.normalized;
+        Vector2 direction = new Vector2(45, 45).normalized;
         Vector2 force = direction * ballForce * manager.GameSpeed;
 
         ball.AddForce(force.x, force.y, 0);

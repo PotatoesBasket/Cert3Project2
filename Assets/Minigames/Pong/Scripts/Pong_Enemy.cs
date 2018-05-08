@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Pong_Enemy : MonoBehaviour
 {
+    //This code is bad because it won't work properly if I change the size of the level or paddle.
+    //It's good though because it's tiny and actually works lol.
+
     private Rigidbody enemy;
     public Rigidbody ball;
+    public Vector3 movement;
 
     private void Start()
     {
@@ -14,6 +18,6 @@ public class Pong_Enemy : MonoBehaviour
 
     private void Update()
     {
-        enemy.transform.position = new Vector3(enemy.transform.position.x, ball.transform.position.y);
+        enemy.transform.position = new Vector3(enemy.position.x, ball.position.y / 1.2f);
     }
 }

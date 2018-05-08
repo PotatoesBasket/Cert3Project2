@@ -71,9 +71,12 @@ public class GameManager : MonoBehaviour
         OnGameFinish();
         GameTimer();
         DebugTools();
+
+        if (Input.GetKeyDown("escape"))
+            Application.Quit();
     }
 
-    
+
     //-----Call Elsewhere-----//
 
     public void SwitchGame() //Loads queued minigame and determines the one to play next without picking a recent one.
@@ -176,7 +179,7 @@ public class GameManager : MonoBehaviour
 
     private void DebugTools()
     {
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("q"))
         {
             if (Cursor.lockState == CursorLockMode.Locked)
                 Cursor.lockState = CursorLockMode.None;

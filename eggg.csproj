@@ -315,7 +315,9 @@
     <Compile Include="Assets\Minigames\Car\Scripts\Car_EnemyMovement.cs" />
     <Compile Include="Assets\Minigames\Car\Scripts\Car_EnemySpawn.cs" />
     <Compile Include="Assets\Minigames\Car\Scripts\Car_Manager.cs" />
+    <Compile Include="Assets\Minigames\Catch\Scripts\Catch_FoodSpawn.cs" />
     <Compile Include="Assets\Minigames\Catch\Scripts\Catch_Manager.cs" />
+    <Compile Include="Assets\Minigames\Catch\Scripts\Catch_Movement.cs" />
     <Compile Include="Assets\Minigames\Catch\Scripts\Catch_Win.cs" />
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_ArrowRotation.cs" />
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Ball.cs" />
@@ -323,6 +325,7 @@
     <Compile Include="Assets\Minigames\Golf\Scripts\Golf_Manager.cs" />
     <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Ball.cs" />
     <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Enemy.cs" />
+    <Compile Include="Assets\Minigames\Pong\Scripts\Pong_FailTrigger.cs" />
     <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Manager.cs" />
     <Compile Include="Assets\Minigames\Pong\Scripts\Pong_Paddle.cs" />
     <Compile Include="Assets\Minigames\Zombie\Scripts\Zombie_Camera.cs" />

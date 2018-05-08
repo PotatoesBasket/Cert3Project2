@@ -24,7 +24,7 @@ public class Car_AutoDrive : MonoBehaviour
 
     void Update()
     {
-        turnInput = Input.GetAxis("Horizontal");
+        turnInput = Input.GetAxis("Mouse X");
     }
 
     private void FixedUpdate()

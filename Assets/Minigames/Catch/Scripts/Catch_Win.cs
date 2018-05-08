@@ -7,7 +7,6 @@ public class Catch_Win : MonoBehaviour
     //Tells the GameManager you won.
 
     private Catch_Manager manager;
-    //private Catch_Controls = controls;
 
     private void Awake()
     {
@@ -20,7 +19,8 @@ public class Catch_Win : MonoBehaviour
         if (collision.rigidbody.Equals(manager.food))
         {
             manager.gameManager.completedGoal = true;
-            //controls.on = false;
+            manager.food.isKinematic = true;
+            manager.controlsOn = false;
         }
     }
 }

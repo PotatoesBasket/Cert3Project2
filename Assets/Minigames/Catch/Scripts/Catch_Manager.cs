@@ -7,6 +7,7 @@ public class Catch_Manager : MonoBehaviour
     public GameManager gameManager;
     public Rigidbody plate;
     public Rigidbody food;
+    public bool controlsOn;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class Catch_Manager : MonoBehaviour
 
     private void Start()
     {
+        controlsOn = true;
         gameManager.completedGoal = false;
         gameManager.command = "Catch!";
     }
