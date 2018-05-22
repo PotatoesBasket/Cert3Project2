@@ -18,7 +18,7 @@ public class Pong_Ball : MonoBehaviour
     {
         ball = GetComponent<Rigidbody>();
         Vector2 direction = new Vector2(45, 45).normalized;
-        Vector2 force = direction * ballForce * manager.GameSpeed;
+        Vector2 force = direction * ballForce * manager.GameSpeed();
 
         ball.AddForce(force.x, force.y, 0);
     }

@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Minigames/Catch/Catch.unity
     guid: 6d6e16ad308f9b14ea1931f55a74ec06
   - enabled: 1
-    path: Assets/Minigames/Zombie/Zombie.unity
+    path: Assets/Minigames/Zombie (wip)/Zombie.unity
     guid: cde3c9a3cc3bc7948a0ad8718679a6d9
   - enabled: 1
     path: Assets/Minigames/Pong/Pong.unity

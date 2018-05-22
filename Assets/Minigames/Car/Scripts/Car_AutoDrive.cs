@@ -7,8 +7,6 @@ public class Car_AutoDrive : MonoBehaviour
     //Moves rigidbody forward automatically and allows for turning with the mouse's horizontal axis.
     //Car forward speed affected by overall game speed.
 
-    //WIP - No mouse controls yet. Turn with A and D.
-
     private Car_Manager manager;
     public Rigidbody car;
 

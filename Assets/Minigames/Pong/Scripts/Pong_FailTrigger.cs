@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pong_FailTrigger : MonoBehaviour
 {
+    //Attached to box collider representing the player's goal.
+
     private Pong_Manager manager;
     public Collider ball;
 
@@ -15,7 +17,7 @@ public class Pong_FailTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == ball)
+        if (other == ball && manager.gameManager != null)
             manager.gameManager.completedGoal = false;
     }
 }

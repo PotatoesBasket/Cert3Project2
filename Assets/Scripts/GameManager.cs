@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         timeLimit = 5f;
         gameTimer = 0f;
         gameSpeed = 1.0f;
-        lives = 3;
+        lives = 4;
         score = 0;
         freeLifeCounter = 0;
     }
@@ -118,41 +118,51 @@ public class GameManager : MonoBehaviour
         freeLifeCounter += 1;
     }
 
-    public void LoseLife() //Minus 1 life.
+    public void LoseLife() //Minus 1 life, activates game over on 0 lives.
     {
         lives -= 1;
+        if (lives == 0)
+            GameOver();
+    }
+
+    public void GameOver()
+    {
+        //To do: load game over scene.
     }
 
 
     //-----Call in Update()-----//
 
-    public void FreeLife() //Adds a life after 25 wins.
+    public void FreeLife() //Adds a life when the score is a multiple of 25 and the player doesn't already have max lives.
     {
         if (freeLifeCounter == 25)
         {
-            lives += 1;
+            if (lives < 4)
+                lives += 1;
             freeLifeCounter = 0;
         }
     }
 
     public void GameTimer() //Keeps a timer that determines how long each game lasts. Speeds up as the game progresses.
     {
-        gameTimer += gameSpeed * Time.deltaTime;
+        if (gameState == GameState.Game)
+        {
+            gameTimer += gameSpeed * Time.deltaTime;
 
-        if (gameTimer >= timeLimit)
-            gameOver = true;
+            if (gameTimer >= timeLimit)
+                gameOver = true;
+        }
     }
 
     public void OnGameFinish() //Adds to score/minus life depending on completedGoal bool when game ends.
     {
-        if (gameOver == true)
+        if (gameState == GameState.Game && gameOver == true)
         {
-            if (completedGoal == true)
-                AddToScore();
             if (completedGoal == false)
                 LoseLife();
+            AddToScore();
 
-            //SwitchGame();
+            SwitchGame();
         }
         //TO DO: if lives = 0, end game.
     }

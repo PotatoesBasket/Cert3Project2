@@ -5,17 +5,27 @@ using UnityEngine;
 public class Pong_Manager : MonoBehaviour
 {
     public GameManager gameManager;
-    public float GameSpeed { get { return gameManager.gameSpeed; } }
 
     private void Awake()
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
-        gameManager = gm.GetComponent<GameManager>();
+        if (gm != null)
+            gameManager = gm.GetComponent<GameManager>();
     }
 
     private void Start()
     {
-        gameManager.completedGoal = true;
-        gameManager.command = "Defend!";
+        if (gameManager != null)
+        {
+            gameManager.completedGoal = true;
+            gameManager.command = "Defend!";
+        }
+    }
+
+    public float GameSpeed()
+    {
+        if (gameManager != null)
+            return gameManager.gameSpeed;
+        else return 1;
     }
 }
