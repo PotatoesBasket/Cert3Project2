@@ -13,7 +13,6 @@ public class HUD : MonoBehaviour
     public Image[] lives;
     public Text command;
     public Text score;
-    public Text timer;
 
     private Animation commandAni;
     public float aniTimer;
@@ -42,7 +41,7 @@ public class HUD : MonoBehaviour
     private void Text() //Updates HUD text.
     {
         command.text = gameManager.command;
-        score.text = gameManager.score.ToString();
+        score.text = "Level: " + gameManager.score.ToString();
     }
 
     private void Lives() //Updates lives.
@@ -66,7 +65,7 @@ public class HUD : MonoBehaviour
             gameManager.playCommandAni = false;
         }
 
-        if (aniTimer >= 1.5f)
+        if (aniTimer >= 1.5f / gameManager.gameSpeed)
         {
             command.gameObject.SetActive(false);
         }

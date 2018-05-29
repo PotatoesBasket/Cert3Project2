@@ -7,31 +7,29 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //Contains debug tools. Remove before release.
-    //Contains TO DOs.
-
     public static GameManager gameManager;
 
-    public float timeLimit;
-    public float gameTimer;
     public float gameSpeed;
+    public float gameTimer;
+    public float transitionTimer;
+    public float gameTimeLimit;
+    public float transitionTimeLimit;
+    public string command;
     public int lives;
     public int score;
     public int freeLifeCounter;
-    public string command;
 
-    public bool playCommandAni = false;
     public bool completedGoal = false;
+    public bool minigameOver = false;
     public bool gameOver = false;
-    public string gameToBeLoaded;
+    public bool playCommandAni = false;
 
     public enum GameState
     {
         TitleScreen,
         Game,
-        Pause,
+        Pause
     }
-
     public GameState gameState;
 
     public enum MinigameList
@@ -42,7 +40,6 @@ public class GameManager : MonoBehaviour
         Zombie,
         Pong
     }
-
     public MinigameList prevGame;
     public MinigameList currentGame;
     public MinigameList nextGame;
@@ -50,42 +47,73 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         KeepGameManager();
-        nextGame = GetRandomGame<MinigameList>();
-        currentGame = nextGame;
-        gameToBeLoaded = nextGame.ToString();
     }
 
     private void Start()
     {
-        timeLimit = 5f;
-        gameTimer = 0f;
-        gameSpeed = 1.0f;
-        lives = 4;
-        score = 0;
-        freeLifeCounter = 0;
+        gameState = GameState.TitleScreen;
+        NewGameValues();
     }
 
     private void Update()
     {
-        FreeLife();
-        OnGameFinish();
         GameTimer();
-        DebugTools();
+        FreeLife();
 
         if (Input.GetKeyDown("escape"))
             Application.Quit();
     }
 
 
-    //-----Call Elsewhere-----//
+    //---------------------------------------------------------------------v
 
-    public void SwitchGame() //Loads queued minigame and determines the one to play next without picking a recent one.
+    public void NewGameValues()
     {
-        playCommandAni = true;
-        gameOver = false;
+        gameTimeLimit = 5f;
+        transitionTimer = 0f;
+        transitionTimeLimit = 3f;
+        gameSpeed = 0.98f;
+        lives = 4;
+        score = 0;
+        freeLifeCounter = 0;
+        NewMinigameValues();
+    }
+
+    private void NewMinigameValues()
+    {
         gameTimer = 0f;
-        gameSpeed += 0.02f;
+        gameSpeed += 0.01f;
+        playCommandAni = true;
+        minigameOver = false;
         prevGame = currentGame;
+    }
+
+    private void GameTimer()
+    {
+        if (gameState == GameState.Game)
+        {
+            gameTimer += gameSpeed * Time.deltaTime;
+
+            if (gameTimer >= gameTimeLimit)
+                minigameOver = true;
+
+            if (minigameOver == true)
+                OnMinigameFinish();
+        }
+    }
+
+    private void OnMinigameFinish()
+    {
+        AddToScore();
+        if (completedGoal == false)
+            LoseLife();
+
+        SwitchGame();
+    }
+
+    public void SwitchGame()
+    {
+        NewMinigameValues();
 
         bool generateNextGame;
         generateNextGame = false;
@@ -93,47 +121,20 @@ public class GameManager : MonoBehaviour
         if (generateNextGame == false)
         {
             currentGame = nextGame;
-            SceneManager.LoadScene(gameToBeLoaded);
+            SceneManager.LoadScene(nextGame.ToString());
             generateNextGame = true;
         }
 
-        if (generateNextGame == true) //TO DO: make better.
+        if (generateNextGame == true)
         {
-            nextGame = GetRandomGame<MinigameList>();
-            if (nextGame == prevGame)
-                nextGame += 1;
-            if (nextGame >= (MinigameList)5)
-                nextGame = 0;
-            if (nextGame == currentGame)
-                nextGame += 1;
-            if (nextGame >= (MinigameList)5)
-                nextGame = 0;
-            gameToBeLoaded = nextGame.ToString();
+            do { nextGame = GetRandomGame<MinigameList>(); }
+            while (nextGame == currentGame || nextGame == prevGame);
+
+            generateNextGame = false;
         }
     }
 
-    public void AddToScore() //Adds 1 to score and free life counter.
-    {
-        score += 1;
-        freeLifeCounter += 1;
-    }
-
-    public void LoseLife() //Minus 1 life, activates game over on 0 lives.
-    {
-        lives -= 1;
-        if (lives == 0)
-            GameOver();
-    }
-
-    public void GameOver()
-    {
-        //To do: load game over scene.
-    }
-
-
-    //-----Call in Update()-----//
-
-    public void FreeLife() //Adds a life when the score is a multiple of 25 and the player doesn't already have max lives.
+    private void FreeLife()
     {
         if (freeLifeCounter == 25)
         {
@@ -143,32 +144,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameTimer() //Keeps a timer that determines how long each game lasts. Speeds up as the game progresses.
+    private void AddToScore()
     {
-        if (gameState == GameState.Game)
-        {
-            gameTimer += gameSpeed * Time.deltaTime;
-
-            if (gameTimer >= timeLimit)
-                gameOver = true;
-        }
+        score += 1;
+        freeLifeCounter += 1;
     }
 
-    public void OnGameFinish() //Adds to score/minus life depending on completedGoal bool when game ends.
+    private void LoseLife()
     {
-        if (gameState == GameState.Game && gameOver == true)
-        {
-            if (completedGoal == false)
-                LoseLife();
-            AddToScore();
-
-            SwitchGame();
-        }
-        //TO DO: if lives = 0, end game.
+        lives -= 1;
     }
 
-
-    //-----Don't worry about these rn-----//
+    //No touchie-----------------------------------------------------------v
 
     private void KeepGameManager() //Keeps the GameManager across scenes.
     {
@@ -185,25 +172,5 @@ public class GameManager : MonoBehaviour
         Array array = Enum.GetValues(typeof(MinigameList));
         MinigameList value = (MinigameList)array.GetValue(UnityEngine.Random.Range(0, array.Length));
         return value;
-    }
-
-    private void DebugTools()
-    {
-        if (Input.GetKeyDown("q"))
-        {
-            if (Cursor.lockState == CursorLockMode.Locked)
-                Cursor.lockState = CursorLockMode.None;
-            else if (Cursor.lockState == CursorLockMode.None)
-                Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        if (Input.GetKeyDown("p"))
-            SwitchGame();
-
-        if (Input.GetKeyDown("o"))
-            AddToScore();
-
-        if (Input.GetKeyDown("i"))
-            LoseLife();
     }
 }

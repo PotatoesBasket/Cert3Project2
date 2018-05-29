@@ -20,7 +20,7 @@ public class Zombie_Manager : MonoBehaviour
     {
         gameManager.command = "Shoot 'em!";
         gameManager.completedGoal = false;
-        gameManager.gameOver = false;
+        gameManager.minigameOver = false;
         canMove = true;
     }
 

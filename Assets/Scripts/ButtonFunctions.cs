@@ -15,9 +15,11 @@ public class ButtonFunctions : MonoBehaviour
 
     public void StartButton()
     {
-        gameManager.gameState = GameManager.GameState.Game;
+        gameManager.NewGameValues();
         gameManager.SwitchGame();
+        gameManager.gameState = GameManager.GameState.Game;
         SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }

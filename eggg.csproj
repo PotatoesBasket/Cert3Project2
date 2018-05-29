@@ -356,6 +356,11 @@
     <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Downloads\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Downloads\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Cutout Wireframe.shader" />
+    <None Include="Assets\Downloads\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Double-Sided Cutout Wireframe.shader" />
+    <None Include="Assets\Downloads\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Double-Sided Wireframe.shader" />
+    <None Include="Assets\Downloads\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Wireframe Functions.cginc" />
+    <None Include="Assets\Downloads\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Wireframe.shader" />
     <None Include="Assets\Downloads\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\Downloads\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\Downloads\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

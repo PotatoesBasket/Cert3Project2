@@ -22,6 +22,6 @@ public class Car_Manager : MonoBehaviour
     {
         gameManager.command = "Avoid!";
         gameManager.completedGoal = true;
-        gameManager.gameOver = false;
+        gameManager.minigameOver = false;
     }
 }
