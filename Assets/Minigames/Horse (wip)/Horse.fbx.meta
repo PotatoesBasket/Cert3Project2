@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 98389973bcde86e4d97d66ef665a6ffc
+timeCreated: 1527602580
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Back
+    100004: BackFinal
+    100006: Bone.014
+    100008: Chest
+    100010: ChestStart
+    100012: Cube
+    100014: Cube.001
+    100016: Estomach
+    100018: Estomach2
+    100020: EstomachStart
+    100022: head2
+    100024: HeadRig
+    100026: HeadRig_end
+    100028: headStart
+    100030: //RootNode
+    100032: Lamp
+    100034: LeftBArmy2
+    100036: LeftBArmy3
+    100038: LeftBArmy4
+    100040: LeftBArmyRig
+    100042: LeftBArmyStart
+    100044: LeftBFootRig
+    100046: LeftBFootRig_end
+    100048: LeftEar
+    100050: LeftEarRig
+    100052: LeftEarRig_end
+    100054: LeftFArmy2
+    100056: LeftFArmy3
+    100058: LeftFArmyRig
+    100060: LeftFArmyStart
+    100062: LeftFFootRig
+    100064: LeftFFootRig_end
+    100066: LeftShoulder
+    100068: Neck
+    100070: NeckRig
+    100072: RightBArmy2
+    100074: RightBArmy3
+    100076: RightBArmy4
+    100078: RightBArmyRig
+    100080: RightBArmyStart
+    100082: RightBFootRig
+    100084: RightBFootRig_end
+    100086: RightEar
+    100088: RightEarRig
+    100090: RightEarRig_end
+    100092: RightFArmy2
+    100094: RightFArmy3
+    100096: RightFArmyRig
+    100098: RightFArmyStart
+    100100: RightFFootRig
+    100102: RightFFootRig_end
+    100104: RightShoulder
+    100106: Tail2
+    100108: Tail3
+    100110: Tail4
+    100112: Tail5
+    100114: Tail6
+    100116: Tail6_end
+    100118: TailStart
+    100120: UpHead
+    100122: upHeadstart
+    400000: Armature
+    400002: Back
+    400004: BackFinal
+    400006: Bone.014
+    400008: Chest
+    400010: ChestStart
+    400012: Cube
+    400014: Cube.001
+    400016: Estomach
+    400018: Estomach2
+    400020: EstomachStart
+    400022: head2
+    400024: HeadRig
+    400026: HeadRig_end
+    400028: headStart
+    400030: //RootNode
+    400032: Lamp
+    400034: LeftBArmy2
+    400036: LeftBArmy3
+    400038: LeftBArmy4
+    400040: LeftBArmyRig
+    400042: LeftBArmyStart
+    400044: LeftBFootRig
+    400046: LeftBFootRig_end
+    400048: LeftEar
+    400050: LeftEarRig
+    400052: LeftEarRig_end
+    400054: LeftFArmy2
+    400056: LeftFArmy3
+    400058: LeftFArmyRig
+    400060: LeftFArmyStart
+    400062: LeftFFootRig
+    400064: LeftFFootRig_end
+    400066: LeftShoulder
+    400068: Neck
+    400070: NeckRig
+    400072: RightBArmy2
+    400074: RightBArmy3
+    400076: RightBArmy4
+    400078: RightBArmyRig
+    400080: RightBArmyStart
+    400082: RightBFootRig
+    400084: RightBFootRig_end
+    400086: RightEar
+    400088: RightEarRig
+    400090: RightEarRig_end
+    400092: RightFArmy2
+    400094: RightFArmy3
+    400096: RightFArmyRig
+    400098: RightFArmyStart
+    400100: RightFFootRig
+    400102: RightFFootRig_end
+    400104: RightShoulder
+    400106: Tail2
+    400108: Tail3
+    400110: Tail4
+    400112: Tail5
+    400114: Tail6
+    400116: Tail6_end
+    400118: TailStart
+    400120: UpHead
+    400122: upHeadstart
+    2100000: Material.001
+    2100002: Material
+    2100004: Material.003
+    2100006: Material.002
+    4300000: Cube.001
+    4300002: Cube
+    9500000: //RootNode
+    10800000: Lamp
+    13700000: Cube
+    13700002: Cube.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
