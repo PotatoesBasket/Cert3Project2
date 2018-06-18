@@ -13,8 +13,7 @@ public class Golf_Ball : MonoBehaviour
 
     void Start()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Golf_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Golf_Manager>();
         rotation = arrow.GetComponent<Golf_ArrowRotation>();
     }
 
@@ -24,7 +23,7 @@ public class Golf_Ball : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && manager.on == true)
         {
-            rb.AddForce(rotation.rotationAngle * 2, 0, 250);
+            rb.AddForce(rotation.rotationAngle * 4, 0, 250);
             manager.on = false;
             manager.putt.Play();
             manager.hasShot = true;

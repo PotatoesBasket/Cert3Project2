@@ -9,17 +9,15 @@ public class ButtonFunctions : MonoBehaviour
 
     public void Awake()
     {
-        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
-        gameManager = gm.GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     public void StartButton()
     {
-        gameManager.coverFadeIn.gameObject.SetActive(true);
-        gameManager.coverFadeIn.Play();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Invoke("StartButtonDelayed", gameManager.coverFadeIn["CoverFadeIn"].length);
+        gameManager.playCoverFade = true;
+        Invoke("StartButtonDelayed", 1f);
     }
 
     private void StartButtonDelayed()
@@ -29,10 +27,6 @@ public class ButtonFunctions : MonoBehaviour
         gameManager.gameState = GameManager.GameState.Game;
         SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
 
-    }
-
-    public void SettingsButton()
-    {
     }
 
     public void ExitButton()

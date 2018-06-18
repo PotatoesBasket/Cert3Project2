@@ -8,15 +8,14 @@ public class Golf_Manager : MonoBehaviour
     public float GameSpeed { get { return gameManager.gameSpeed; } }
     public bool on = true;
 
-    public bool hasShot = false;
     public AudioSource putt;
     public AudioSource goal;
     public AudioSource clap;
+    public bool hasShot = false;
 
     private void Awake()
     {
-        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
-        gameManager = gm.GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         gameManager.command = "Putt!";
         gameManager.completedGoal = false; //Golf_Hole

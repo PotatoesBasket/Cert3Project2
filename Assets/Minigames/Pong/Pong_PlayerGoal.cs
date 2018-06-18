@@ -9,13 +9,16 @@ public class Pong_PlayerGoal : MonoBehaviour
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Pong_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Pong_Manager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other == ball)
+        {
             manager.gameManager.completedGoal = false;
+            manager.on = false;
+            manager.miss.Play();
+        }
     }
 }

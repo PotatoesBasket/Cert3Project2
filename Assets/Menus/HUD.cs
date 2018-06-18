@@ -23,16 +23,9 @@ public class HUD : MonoBehaviour
     public void Awake()
     {
         KeepHUD();
-        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
-        gameManager = gm.GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         commandAni = command.GetComponent<Animation>();
         timerAni = timer.GetComponent<Animation>();
-    }
-
-    public void Start()
-    {
-        for (int i = 0; i < gameManager.lives; i++)
-            lives[i].color = new Color(78f, 0.22f, 0.22f, 1f);
     }
 
     public void Update()
@@ -51,9 +44,12 @@ public class HUD : MonoBehaviour
 
     private void Lives() //Updates lives.
     {
-        for (int i = 3; i + 1 > gameManager.lives && gameManager.lives >= 0; i--)
+        for (int i = 0; i < lives.Length; i++)
         {
-            lives[i].color = new Color(0.22f, 0.22f, 0.22f, 0.8f);
+            if (i > gameManager.lives - 1)
+                lives[i].color = new Color(0.22f, 0.22f, 0.22f, 0.8f);
+            else
+                lives[i].color = new Color(78f, 0.22f, 0.22f, 1f);
         }
     }
 
@@ -82,7 +78,7 @@ public class HUD : MonoBehaviour
 
     private void Pause()
     {
-        if (gameManager.isPaused == true)
+        if (gameManager.showPausePanel == true)
             pausePanel.gameObject.SetActive(true);
         else
             pausePanel.gameObject.SetActive(false);

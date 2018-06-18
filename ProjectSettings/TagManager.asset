@@ -4,13 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Item_Moveable
-  - Item_ObtainOnCollide
-  - Item_ObtainOnClick
-  - ItemInHand
   - GameManager
   - MiniManager
   - Collision
+  - HUD
+  - CoverAni
   layers:
   - Default
   - TransparentFX

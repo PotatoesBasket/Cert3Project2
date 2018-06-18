@@ -50,6 +50,7 @@ public class Ship_Enemy : MonoBehaviour
             manager.gameManager.completedGoal = true;
             playDeathAnim = true;
             manager.on = false;
+            manager.explosion.Play();
         }
     }
 }

@@ -9,11 +9,11 @@ public class Catch_Manager : MonoBehaviour
     public bool on = true;
 
     public AudioSource clap;
+    public bool hasFailed = false;
 
     private void Awake()
     {
-        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
-        gameManager = gm.GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         gameManager.command = "Catch!";
         gameManager.completedGoal = false; //Catch_FoodCollisions
@@ -23,7 +23,7 @@ public class Catch_Manager : MonoBehaviour
     {
         if (gameManager.isPaused == true)
             on = false;
-        else if (gameManager.completedGoal == false)
+        else if (hasFailed == false && gameManager.completedGoal == false)
             on = true;
     }
 }

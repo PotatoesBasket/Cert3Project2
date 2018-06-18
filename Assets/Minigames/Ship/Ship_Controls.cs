@@ -14,8 +14,7 @@ public class Ship_Controls : MonoBehaviour
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Ship_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Ship_Manager>();
         player = GetComponent<Rigidbody>();
     }
     
@@ -24,17 +23,18 @@ public class Ship_Controls : MonoBehaviour
         if (manager.on == true)
         {
             moveInput = Input.GetAxis("Mouse X");
-            movement = transform.right * moveInput;
+            movement = transform.right * (moveInput / 2.5f);
 
             if (Input.GetButtonDown("Fire1"))
                 Fire();
 
-            player.MovePosition(new Vector3(Mathf.Clamp(player.position.x + movement.x, -10, 10), player.position.y, player.position.z));
+            player.MovePosition(new Vector3(Mathf.Clamp(player.position.x + movement.x, -9.9f, 9.9f), player.position.y, player.position.z));
         }
     }
     
     private void Fire()
     {
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        manager.laser.Play();
     }
 }

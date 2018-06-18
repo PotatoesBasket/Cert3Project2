@@ -8,6 +8,9 @@ public class Ship_Manager : MonoBehaviour
     public float GameSpeed { get { return gameManager.gameSpeed; } }
     public bool on = true;
 
+    public AudioSource laser;
+    public AudioSource explosion;
+
     private void Awake()
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameManager");

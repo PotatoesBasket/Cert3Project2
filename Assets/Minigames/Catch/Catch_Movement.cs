@@ -21,9 +21,10 @@ public class Catch_Movement : MonoBehaviour
 
     private void Update()
     {
-        move = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
-
         if (manager.on == true)
+        {
+            move = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
             plate.MovePosition(plate.position + move);
+        }
     }
 }

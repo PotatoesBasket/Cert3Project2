@@ -49,7 +49,7 @@ public class Car_AutoDrive : MonoBehaviour
     private void Turn()
     {
         float turn = turnInput * turnSpeed * Time.deltaTime;
-        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        Quaternion turnRotation = Quaternion.Euler(0f, turn / 2, 0f);
         car.MoveRotation(car.rotation * turnRotation);
     }
 }

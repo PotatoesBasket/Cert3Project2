@@ -8,28 +8,30 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    public Animation coverFadeIn;
+    public HighScores highScores;
 
     public float gameSpeed;
     public float gameTimer;
-    public float transitionTimer;
     public float gameTimeLimit;
-    public float transitionTimeLimit;
     public string command;
     public int lives;
     public int score;
     public int freeLifeCounter;
 
+    public bool playNewMGAni = false;
     public bool completedGoal = false;
     public bool minigameOver = false;
     public bool gameOver = false;
-    public bool playNewMGAni = false;
     public bool isPaused = false;
+    public bool showPausePanel = false;
+    public bool playCoverFade = false;
+    public bool musicOn = true;
 
     public enum GameState
     {
         TitleScreen,
         Game,
+        GameOver,
         Pause
     }
     public GameState gameState;
@@ -54,17 +56,16 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameState = GameState.TitleScreen;
+        nextGame = GetRandomGame<MinigameList>();
         NewGameValues();
     }
 
     private void Update()
     {
         GameTimer();
-        FreeLife();
+        GameOver();
         Pause();
-
-        if (Input.GetKeyDown("escape"))
-            Application.Quit();
+        Sound();
     }
 
 
@@ -73,11 +74,9 @@ public class GameManager : MonoBehaviour
     public void NewGameValues()
     {
         gameTimeLimit = 5f;
-        transitionTimer = 0f;
-        transitionTimeLimit = 3f;
         gameSpeed = 0.98f;
         lives = 4;
-        score = 0;
+        score = 1;
         freeLifeCounter = 0;
         NewMinigameValues();
     }
@@ -118,38 +117,24 @@ public class GameManager : MonoBehaviour
     {
         NewMinigameValues();
 
-        bool generateNextGame;
-        generateNextGame = false;
+        currentGame = nextGame;
+        SceneManager.LoadScene(nextGame.ToString());
 
-        if (generateNextGame == false)
-        {
-            currentGame = nextGame;
-            SceneManager.LoadScene(nextGame.ToString());
-            generateNextGame = true;
-        }
-
-        if (generateNextGame == true)
-        {
-            do { nextGame = GetRandomGame<MinigameList>(); }
-            while (nextGame == currentGame || nextGame == prevGame);
-            generateNextGame = false;
-        }
-    }
-
-    private void FreeLife()
-    {
-        if (freeLifeCounter == 25)
-        {
-            if (lives < 4)
-                lives += 1;
-            freeLifeCounter = 0;
-        }
+        do { nextGame = GetRandomGame<MinigameList>(); }
+        while (nextGame == currentGame || nextGame == prevGame);
     }
 
     private void AddToScore()
     {
         score += 1;
         freeLifeCounter += 1;
+
+        if (freeLifeCounter == 25)
+        {
+            if (lives < 4 && lives > 0)
+                lives += 1;
+            freeLifeCounter = 0;
+        }
     }
 
     private void LoseLife()
@@ -157,26 +142,57 @@ public class GameManager : MonoBehaviour
         lives -= 1;
     }
 
+    private void GameOver()
+    {
+        if (lives <= 0 && gameState == GameState.Game)
+        {
+            score--;
+            highScores.AddScore(score);
+            highScores.SaveScoresToFile();
+
+            SceneManager.LoadScene("Game Over");
+            gameState = GameState.GameOver;
+            Destroy(GameObject.FindWithTag("HUD"));
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
     private void Pause()
     {
         if (Input.GetButtonDown("Fire2") && isPaused == false && gameState == GameState.Game)
         {
             isPaused = true;
-            AudioListener.volume = 0.5f;
+            showPausePanel = true;
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             gameState = GameState.Pause;
+
+            if (musicOn == true)
+                AudioListener.volume = 0.5f;
         }
         else if (Input.GetButtonDown("Fire2") && isPaused == true)
         {
             isPaused = false;
-            AudioListener.volume = 1f;
+            showPausePanel = false;
             Time.timeScale = 1;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             gameState = GameState.Game;
+
+            if (musicOn == true)
+                AudioListener.volume = 1f;
         }
+    }
+
+    private void Sound()
+    {
+        if (musicOn == true)
+            AudioListener.volume = 1f;
+        else
+            AudioListener.volume = 0f;
     }
 
     private void KeepGameManager() //Keeps the GameManager across scenes.

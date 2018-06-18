@@ -14,8 +14,7 @@ public class Golf_ArrowRotation : MonoBehaviour
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Golf_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Golf_Manager>();
     }
 
     void Update()

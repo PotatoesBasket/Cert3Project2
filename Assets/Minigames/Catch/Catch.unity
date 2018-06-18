@@ -222,21 +222,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e205e5f3823a94188515d6304af27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coverFadeIn: {fileID: 0}
+  highScores: {fileID: 0}
   gameSpeed: 0
   gameTimer: 0
-  transitionTimer: 0
   gameTimeLimit: 0
-  transitionTimeLimit: 0
   command: 
   lives: 0
   score: 0
   freeLifeCounter: 0
+  playNewMGAni: 0
   completedGoal: 0
   minigameOver: 0
   gameOver: 0
-  playNewMGAni: 0
   isPaused: 0
+  showPausePanel: 0
+  playCoverFade: 0
+  musicOn: 1
   gameState: 0
   prevGame: 0
   currentGame: 0
@@ -263,8 +264,8 @@ GameObject:
   m_Component:
   - component: {fileID: 823080177}
   - component: {fileID: 823080176}
-  - component: {fileID: 823080175}
   - component: {fileID: 823080174}
+  - component: {fileID: 823080175}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -367,8 +368,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.20747809, y: 0.043753114, z: 0.20340917}
-  m_Center: {x: 0, y: 0.021876557, z: 0}
+  m_Size: {x: 0.2, y: 0.18, z: 0.2}
+  m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!114 &838892744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {fileID: 823080175}
-  plate: {fileID: 2104554260}
 --- !u!1 &963771080
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +619,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   on: 1
   clap: {fileID: 963771082}
+  hasFailed: 0
 --- !u!1 &1546737008
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +697,7 @@ GameObject:
   - component: {fileID: 2104554262}
   - component: {fileID: 2104554261}
   - component: {fileID: 2104554260}
+  - component: {fileID: 2104554259}
   - component: {fileID: 2104554258}
   m_Layer: 0
   m_Name: Plate
@@ -716,6 +718,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0, z: 0}
+--- !u!65 &2104554259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104554257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.02, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0.005}
 --- !u!65 &2104554260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -726,8 +740,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.039, y: 0.039, z: 0.009628892}
-  m_Center: {x: 0, y: -0.00000000651926, z: 0.004814446}
+  m_Size: {x: 0.04, y: 0.04, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0.005}
 --- !u!54 &2104554261
 Rigidbody:
   m_ObjectHideFlags: 0
