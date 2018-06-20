@@ -8,13 +8,17 @@ public class Car_Manager : MonoBehaviour
     public float GameSpeed { get { return gameManager.gameSpeed; } }
     public bool on = true;
 
+    public AudioSource engine;
+    public AudioSource crash;
+
     private void Awake()
     {
-        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
-        gameManager = gm.GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         gameManager.command = "Avoid!";
         gameManager.completedGoal = true; //Car_Collision
+
+        engine.Play();
     }
 
     private void Update()

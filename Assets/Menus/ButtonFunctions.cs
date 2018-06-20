@@ -26,7 +26,6 @@ public class ButtonFunctions : MonoBehaviour
         gameManager.SwitchGame();
         gameManager.gameState = GameManager.GameState.Game;
         SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
-
     }
 
     public void ExitButton()

@@ -18,14 +18,14 @@ public class TitleScreen : MonoBehaviour
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        if (offsetIsCenter)
+            offset = transform.position;
     }
 
     private void Start()
     {
         coverFadeOut.Play();
-
-        if (offsetIsCenter)
-            offset = transform.position;
     }
 
     private void Update()

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public bool showPausePanel = false;
     public bool playCoverFade = false;
+    public bool playFreeLife = false;
     public bool musicOn = true;
 
     public enum GameState
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0.98f;
         lives = 4;
         score = 1;
-        freeLifeCounter = 0;
+        freeLifeCounter = 1;
         NewMinigameValues();
     }
 
@@ -133,7 +134,8 @@ public class GameManager : MonoBehaviour
         {
             if (lives < 4 && lives > 0)
                 lives += 1;
-            freeLifeCounter = 0;
+            freeLifeCounter = 1;
+            playFreeLife = true;
         }
     }
 
@@ -166,24 +168,10 @@ public class GameManager : MonoBehaviour
             isPaused = true;
             showPausePanel = true;
             Time.timeScale = 0;
+            AudioListener.pause = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             gameState = GameState.Pause;
-
-            if (musicOn == true)
-                AudioListener.volume = 0.5f;
-        }
-        else if (Input.GetButtonDown("Fire2") && isPaused == true)
-        {
-            isPaused = false;
-            showPausePanel = false;
-            Time.timeScale = 1;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            gameState = GameState.Game;
-
-            if (musicOn == true)
-                AudioListener.volume = 1f;
         }
     }
 

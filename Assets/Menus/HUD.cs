@@ -18,6 +18,7 @@ public class HUD : MonoBehaviour
 
     private Animation commandAni;
     private Animation timerAni;
+    public Animation freeLife;
     public float aniTimer;
 
     public void Awake()
@@ -68,6 +69,17 @@ public class HUD : MonoBehaviour
             timerAni.Play();
             gameManager.playNewMGAni = false;
         }
+
+        if (gameManager.playFreeLife == true)
+        {
+            freeLife.gameObject.SetActive(true);
+            freeLife["Flashing"].speed = 1 * gameManager.gameSpeed;
+            freeLife.Play();
+            gameManager.playFreeLife = false;
+        }
+
+        if (freeLife.gameObject.activeSelf == true && aniTimer >= 1f)
+            freeLife.gameObject.SetActive(false);
 
         if (aniTimer >= 1.5f)
             command.gameObject.SetActive(false);

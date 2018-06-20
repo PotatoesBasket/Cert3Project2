@@ -13,6 +13,14 @@ public class SoundToggle : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
+    private void Start()
+    {
+        if (gameManager.musicOn == true)
+            musicOn.SetActive(true);
+        else
+            musicOff.SetActive(true);
+    }
+
     public void OnMusicToggle()
     {
         if (gameManager.musicOn == true)

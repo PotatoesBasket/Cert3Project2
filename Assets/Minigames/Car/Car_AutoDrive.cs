@@ -8,7 +8,7 @@ public class Car_AutoDrive : MonoBehaviour
     //Car forward speed affected by overall game speed.
 
     private Car_Manager manager;
-    public Rigidbody car;
+    private Rigidbody car;
 
     public float speed = 20.0f;
     public float turnSpeed = 100.0f;
@@ -16,8 +16,8 @@ public class Car_AutoDrive : MonoBehaviour
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Car_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Car_Manager>();
+        car = GetComponent<Rigidbody>();
     }
 
     void Update()

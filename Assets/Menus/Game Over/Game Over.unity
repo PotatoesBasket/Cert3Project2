@@ -559,9 +559,9 @@ MonoBehaviour:
   minigameOver: 0
   gameOver: 0
   isPaused: 0
+  showPausePanel: 0
   playCoverFade: 0
-  settings: 0
-  areSettingsOpen: 0
+  musicOn: 1
   gameState: 0
   prevGame: 0
   currentGame: 0
@@ -1247,7 +1247,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 79a18c1c18fcd66408ac25af52d3f250, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.53
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

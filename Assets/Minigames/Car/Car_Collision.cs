@@ -10,8 +10,7 @@ public class Car_Collision : MonoBehaviour
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Car_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Car_Manager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,6 +19,8 @@ public class Car_Collision : MonoBehaviour
         {
             manager.gameManager.completedGoal = false;
             manager.on = false;
+            manager.engine.Stop();
+            manager.crash.Play();
             collision.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         }
     }

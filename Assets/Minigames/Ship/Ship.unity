@@ -205,21 +205,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e205e5f3823a94188515d6304af27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coverFadeIn: {fileID: 0}
+  highScores: {fileID: 0}
   gameSpeed: 0
   gameTimer: 0
-  transitionTimer: 0
   gameTimeLimit: 0
-  transitionTimeLimit: 0
   command: 
   lives: 0
   score: 0
   freeLifeCounter: 0
+  playNewMGAni: 0
   completedGoal: 0
   minigameOver: 0
   gameOver: 0
-  playNewMGAni: 0
   isPaused: 0
+  showPausePanel: 0
+  playCoverFade: 0
+  musicOn: 1
   gameState: 0
   prevGame: 0
   currentGame: 0
@@ -495,7 +496,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a155f1d266e172846989b9f683f23224, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.82
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -604,7 +605,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 442ff7df1b0de414dbd7d2de259a9110, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.33
   m_Pitch: 1
   Loop: 0
   Mute: 0

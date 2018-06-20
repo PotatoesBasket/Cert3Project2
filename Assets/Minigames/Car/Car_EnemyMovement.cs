@@ -6,8 +6,13 @@ public class Car_EnemyMovement : MonoBehaviour
 {
     //Moves enemy cars.
 
-    public Rigidbody enemy;
+    private Rigidbody enemy;
     public float speed = 10.0f;
+
+    private void Awake()
+    {
+        enemy = GetComponent<Rigidbody>();
+    }
 
     private void FixedUpdate()
     {

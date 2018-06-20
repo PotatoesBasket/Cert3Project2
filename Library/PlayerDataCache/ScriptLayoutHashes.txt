@@ -95,7 +95,8 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 50bc42aec0324e8da9962d40b2a714a9 Assembly-CSharp.dll:.ParticleMenu
 5e1df2675dc21c7df91bf24bec263676 Assembly-CSharp.dll:.BWEffect
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Catch_FoodSpawn
-7a50befc360851ac3856e0a5be26145d Assembly-CSharp.dll:.Car_AutoDrive
+050bbab54aa3cf599323bca048767b03 Assembly-CSharp.dll:.InGameButtons
+a850073b9a359eba8eaa4ea3556665e7 Assembly-CSharp.dll:.Car_AutoDrive
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -155,7 +156,7 @@ cfa93710d56cd4da2a3b2eec27bc1139 Assembly-CSharp.dll:UnityStandardAssets.Water.P
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:UnityStandardAssets.Water.Displace
 809dbf3c75147bd437065fd080cfacd1 Assembly-CSharp.dll:ToonyColors.TCF_Demo
-41c15eb4ecea588e977d0a927ae15b78 Assembly-CSharp.dll:.Car_EnemySpawn
+7fd6dfd80143c10906637c6f25337d48 Assembly-CSharp.dll:.Car_EnemySpawn
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Zombie_Shooting
 97536c9cad9be46db5e7cc0cf6ca60c0 Assembly-CSharp.dll:.Pong_Manager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Shop_ItemInteraction
@@ -186,7 +187,7 @@ b5b7c02c93ff2aa4d3e6c859649463da Assembly-UnityScript.dll:.TimedObjectDestructor
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-0c8f429f00b296e0f84a40b35b3caaf9 Assembly-CSharp.dll:.Car_EnemyMovement
+dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.Car_EnemyMovement
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 ec8e170dfaf3cfe60bf7d309c2d421a5 Assembly-CSharp.dll:.Golf_ArrowRotation
 71d0740474d3c736c5b30975f01c5197 Assembly-CSharp.dll:.Pong_PlayerGoal
@@ -200,12 +201,13 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 de80352772350cf562dfcbdb2d5803e2 Assembly-CSharp.dll:.Zombie_Manager
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 05be31d72d6b33d99e3161f0f1052982 Assembly-CSharp.dll:.Golf_Manager
+62a9e54a7e7b79130c45f08d5eb79eb2 Assembly-CSharp.dll:.SoundToggle
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:UnityStandardAssets.Water.GerstnerDisplace
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DiyEffect__FullOnly
 dcdc077132e6b6daced2758c457054bf Assembly-CSharp.dll:.Zombie_Camera
 2fa7c540262c515a4159299f0f3267ad Assembly-CSharp.dll:.Catch_FoodCollisions
 6746ad828d32ad6e5c07a63950fd4be6 Assembly-CSharp.dll:UnityStandardAssets.Water.WaterTile
-b58ecd7d2da154be9102eff31feba0bb Assembly-CSharp.dll:.Car_Manager
+41e6bfe7575eecaa6821d6d7c2bce47c Assembly-CSharp.dll:.Car_Manager
 26d8d03cba3a5013f7383a1631cb8590 Assembly-CSharp.dll:.Shop_FPView
 89284f1718ed368f44601b719fdc87e8 Assembly-CSharp.dll:.Golf_Hole
 2458fedf2bc1652f48ee8188aa463b3c Assembly-CSharp.dll:.ShaderEffect_Scanner
@@ -213,5 +215,3 @@ b93b2a0d14c8ef58aaae77519b8f963d Assembly-CSharp.dll:.Pong_Enemy
 ad86d6a55a768242414397a5b7c39ba4 Assembly-CSharp.dll:.Sort_Spawn
 28fb56c903b6d394e4f1eb2665d69a3d Assembly-CSharp.dll:.Catch_Movement
 dcdc077132e6b6daced2758c457054bf Assembly-CSharp.dll:.Zombie_GunMovement
-62a9e54a7e7b79130c45f08d5eb79eb2 Assembly-CSharp.dll:.SoundToggle
-050bbab54aa3cf599323bca048767b03 Assembly-CSharp.dll:.InGameButtons

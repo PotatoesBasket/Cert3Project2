@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InGameButtons : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class InGameButtons : MonoBehaviour
     {
         gameManager.isPaused = false;
         gameManager.showPausePanel = false;
-        AudioListener.volume = 1f;
         Time.timeScale = 1;
+        AudioListener.pause = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         gameManager.gameState = GameManager.GameState.Game;
@@ -53,7 +54,17 @@ public class InGameButtons : MonoBehaviour
 
     public void ExitYes()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Title Screen");
+        Destroy(GameObject.FindWithTag("HUD"));
+
+        gameManager.isPaused = false;
+        gameManager.NewGameValues();
+        gameManager.gameState = GameManager.GameState.TitleScreen;
+
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ExitNo()

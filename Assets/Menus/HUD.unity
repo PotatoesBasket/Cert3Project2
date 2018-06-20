@@ -277,7 +277,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150, y: -40.5}
-  m_SizeDelta: {x: 155.5, y: 45}
+  m_SizeDelta: {x: 155.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94758375
 MonoBehaviour:
@@ -449,7 +449,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -40.5}
-  m_SizeDelta: {x: 246.5, y: 45}
+  m_SizeDelta: {x: 246.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255907395
 MonoBehaviour:
@@ -611,7 +611,7 @@ RectTransform:
   m_Children:
   - {fileID: 255907394}
   m_Father: {fileID: 1102412179}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -941,7 +941,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -40.5}
-  m_SizeDelta: {x: 246.5, y: 45}
+  m_SizeDelta: {x: 246.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506144443
 MonoBehaviour:
@@ -1381,6 +1381,7 @@ RectTransform:
   - {fileID: 262337508}
   - {fileID: 1009937402}
   - {fileID: 1636834397}
+  - {fileID: 1621796666}
   - {fileID: 1453451297}
   - {fileID: 279867272}
   - {fileID: 2107285677}
@@ -1412,6 +1413,7 @@ MonoBehaviour:
   command: {fileID: 1636834399}
   score: {fileID: 1009937403}
   pausePanel: {fileID: 1453451296}
+  freeLife: {fileID: 1621796669}
   aniTimer: 0
 --- !u!114 &1102412181
 MonoBehaviour:
@@ -1596,6 +1598,7 @@ MonoBehaviour:
   isPaused: 0
   showPausePanel: 0
   playCoverFade: 0
+  playFreeLife: 0
   musicOn: 1
   gameState: 0
   prevGame: 0
@@ -1643,7 +1646,7 @@ RectTransform:
   m_Children:
   - {fileID: 94758374}
   m_Father: {fileID: 1102412179}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1683,6 +1686,96 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1453451296}
+--- !u!1 &1621796665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1621796666}
+  - component: {fileID: 1621796668}
+  - component: {fileID: 1621796667}
+  - component: {fileID: 1621796669}
+  m_Layer: 5
+  m_Name: Free Life
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1621796666
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621796665}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_Children: []
+  m_Father: {fileID: 1102412179}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -17}
+  m_SizeDelta: {x: 163.1, y: 70.21002}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1621796667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621796665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9206778e581bfe044a871070a62c9da7, type: 3}
+    m_FontSize: 39
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 121
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: extra life!
+--- !u!222 &1621796668
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621796665}
+--- !u!111 &1621796669
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621796665}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 401dfff37043a9146871ac4d8d7ab748, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 401dfff37043a9146871ac4d8d7ab748, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1626675961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2448,7 @@ RectTransform:
   m_Children:
   - {fileID: 506144442}
   m_Father: {fileID: 1102412179}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

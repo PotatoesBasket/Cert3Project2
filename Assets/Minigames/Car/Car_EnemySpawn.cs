@@ -6,7 +6,7 @@ public class Car_EnemySpawn : MonoBehaviour
 {
     //Places the enemy in either the left or right spawn position randomly.
 
-    public Rigidbody enemy;
+    private Rigidbody enemy;
     public Transform left;
     public Transform right;
     private bool leftSpawn;
