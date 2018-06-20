@@ -139,12 +139,12 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 7e989e53fed2d76c59c587dada3ab176 Assembly-CSharp.dll:.ShaderEffect_Tint
 61065ebb2ebf1abf62ce525e27feb1fb Assembly-CSharp.dll:.Shop_InteractableItem
-eb161d7f8c6eaab6031cee980bda0c83 Assembly-CSharp.dll:.GameManager
+1246754c2c2733edb22fe36199188574 Assembly-CSharp.dll:.GameManager
 b193c20343121c3a099d3843e0ff31e2 Assembly-CSharp.dll:.Ship_Bullet
 ae1b5eaebf7dd76b7cbb6d9949f43c91 Assembly-CSharp.dll:.Golf_Ball
 1afde767f1aa2b88183a78e7321fa711 Assembly-CSharp.dll:.GameOver
 b7536247a550bc1596505b7f345c8adf Assembly-CSharp.dll:.GunAim
-242cbcc7d5b43964df7e640393d9142d Assembly-CSharp.dll:.HUD
+a05045586d6e9da671620f777c9c6b1e Assembly-CSharp.dll:.HUD
 b58ecd7d2da154be9102eff31feba0bb Assembly-CSharp.dll:.Shop_Manager
 076146cbed261922946087017e188b32 Assembly-CSharp.dll:.TitleScreen
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate
