@@ -561,6 +561,7 @@ MonoBehaviour:
   isPaused: 0
   showPausePanel: 0
   playCoverFade: 0
+  playFreeLife: 0
   musicOn: 1
   gameState: 0
   prevGame: 0
@@ -1912,7 +1913,6 @@ GameObject:
   - component: {fileID: 2100457241}
   - component: {fileID: 2100457240}
   - component: {fileID: 2100457242}
-  - component: {fileID: 2100457243}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -2029,15 +2029,3 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2100457243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2100457238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff420801192e4041b7bf6e8c47eb84d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}

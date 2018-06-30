@@ -1466,6 +1466,7 @@ MonoBehaviour:
   isPaused: 0
   showPausePanel: 0
   playCoverFade: 0
+  playFreeLife: 0
   musicOn: 1
   gameState: 0
   prevGame: 0
@@ -1881,8 +1882,8 @@ Light:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
+    m_Strength: 0.5
+    m_Bias: 0.16
     m_NormalBias: 0
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}

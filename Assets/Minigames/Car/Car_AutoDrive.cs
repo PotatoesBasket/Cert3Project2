@@ -48,8 +48,16 @@ public class Car_AutoDrive : MonoBehaviour
 
     private void Turn()
     {
+#if UNITY_STANDALONE || UNITY_EDITOR
         float turn = turnInput * turnSpeed * Time.deltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turn / 2, 0f);
         car.MoveRotation(car.rotation * turnRotation);
+#endif
+
+#if UNITY_WEBGL
+        float turnW = turnInput / 2 * turnSpeed * Time.deltaTime;
+        Quaternion turnRotationW = Quaternion.Euler(0f, turnW / 2, 0f);
+        car.MoveRotation(car.rotation * turnRotationW);
+#endif
     }
 }

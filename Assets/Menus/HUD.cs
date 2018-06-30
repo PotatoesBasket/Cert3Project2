@@ -84,7 +84,7 @@ public class HUD : MonoBehaviour
         if (aniTimer >= 1.5f)
             command.gameObject.SetActive(false);
 
-        if (aniTimer >= 4.95f)
+        if (gameManager.gameTimer >= 4.9f)
             timer.gameObject.SetActive(false);
     }
 

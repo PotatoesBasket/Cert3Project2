@@ -6,12 +6,10 @@ public class Catch_Movement : MonoBehaviour
 {
     private Catch_Manager manager;
     private Rigidbody plate;
-    public Vector3 move;
 
     private void Awake()
     {
-        GameObject m = GameObject.FindGameObjectWithTag("MiniManager");
-        manager = m.GetComponent<Catch_Manager>();
+        manager = GameObject.FindGameObjectWithTag("MiniManager").GetComponent<Catch_Manager>();
     }
 
     private void Start()
@@ -23,8 +21,15 @@ public class Catch_Movement : MonoBehaviour
     {
         if (manager.on == true)
         {
-            move = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
+#if UNITY_STANDALONE || UNITY_EDITOR
+            Vector3 move = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
             plate.MovePosition(plate.position + move);
+#endif
+
+#if UNITY_WEBGL
+            Vector3 moveW = new Vector3(Input.GetAxisRaw("Mouse X") / 2, 0, Input.GetAxisRaw("Mouse Y") / 2);
+            plate.MovePosition(plate.position + moveW);
+#endif
         }
     }
 }

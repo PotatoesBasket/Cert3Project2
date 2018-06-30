@@ -237,6 +237,7 @@ MonoBehaviour:
   isPaused: 0
   showPausePanel: 0
   playCoverFade: 0
+  playFreeLife: 0
   musicOn: 1
   gameState: 0
   prevGame: 0
@@ -334,7 +335,7 @@ Transform:
   m_GameObject: {fileID: 823080173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 18.13}
-  m_LocalScale: {x: 400, y: 1, z: 200}
+  m_LocalScale: {x: 214.7, y: 1, z: 139.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -657,7 +658,7 @@ Light:
     m_Strength: 1
     m_Bias: 2
     m_NormalBias: 3
-    m_NearPlane: 6.3
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -679,7 +680,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1546737008}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0, y: 76.270004, z: 18.13}
+  m_LocalPosition: {x: 0, y: 21, z: 0}
   m_LocalScale: {x: 0.925, y: 1.062875, z: 1.0442698}
   m_Children: []
   m_Father: {fileID: 0}
@@ -717,7 +718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2a855f116082348b89044bd7c84e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {x: 0, y: 0, z: 0}
 --- !u!65 &2104554259
 BoxCollider:
   m_ObjectHideFlags: 0

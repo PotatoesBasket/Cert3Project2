@@ -149,10 +149,17 @@ public class GameManager : MonoBehaviour
         if (lives <= 0 && gameState == GameState.Game)
         {
             score--;
+
+#if UNITY_STANDALONE || UNITY_EDITOR
             highScores.AddScore(score);
             highScores.SaveScoresToFile();
-
             SceneManager.LoadScene("Game Over");
+#endif
+
+#if UNITY_WEBGL
+            SceneManager.LoadScene("Game Over Web");
+#endif
+
             gameState = GameState.GameOver;
             Destroy(GameObject.FindWithTag("HUD"));
 

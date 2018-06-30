@@ -142,10 +142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   on: 1
-  hasShot: 0
   putt: {fileID: 1924527283}
   goal: {fileID: 2085502168}
   clap: {fileID: 1260842760}
+  hasShot: 0
 --- !u!4 &640024329
 Transform:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0.7
     m_NormalBias: 0
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
@@ -707,21 +707,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e205e5f3823a94188515d6304af27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coverFadeIn: {fileID: 0}
+  highScores: {fileID: 0}
   gameSpeed: 0
   gameTimer: 0
-  transitionTimer: 0
   gameTimeLimit: 0
-  transitionTimeLimit: 0
   command: 
   lives: 0
   score: 0
   freeLifeCounter: 0
+  playNewMGAni: 0
   completedGoal: 0
   minigameOver: 0
   gameOver: 0
-  playNewMGAni: 0
   isPaused: 0
+  showPausePanel: 0
+  playCoverFade: 0
+  playFreeLife: 0
+  musicOn: 1
   gameState: 0
   prevGame: 0
   currentGame: 0

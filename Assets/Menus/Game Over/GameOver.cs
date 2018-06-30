@@ -25,7 +25,6 @@ public class GameOver : MonoBehaviour
                 scores[i].text = text;
             }
         }
-
         ShowPlayerScore();
     }
 

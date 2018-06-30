@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Menus/Game Over/Game Over.unity
     guid: 99ee762b40ed57c4784aed199a57c90c
   - enabled: 1
+    path: Assets/Menus/Game Over/Game Over Web.unity
+    guid: c239b897b2a3c9d419e89a1ecab17c7d
+  - enabled: 1
     path: Assets/Minigames/Golf/Golf.unity
     guid: d7c1226a14cf46149b1d129d2bc88a64
   - enabled: 1

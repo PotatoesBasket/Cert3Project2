@@ -1722,6 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deer: {fileID: 899527400}
+  exitButton: {fileID: 494289802}
   coverFadeOut: {fileID: 2014254931}
   coverFadeIn: {fileID: 288966572}
   settingsPanel: {fileID: 563773272}

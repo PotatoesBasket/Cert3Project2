@@ -28,7 +28,13 @@ public class Ship_Controls : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
                 Fire();
 
+#if UNITY_STANDALONE || UNITY_EDITOR
             player.MovePosition(new Vector3(Mathf.Clamp(player.position.x + movement.x, -9.9f, 9.9f), player.position.y, player.position.z));
+#endif
+
+#if UNITY_WEBGL
+            player.MovePosition(new Vector3(Mathf.Clamp(player.position.x + movement.x / 2, -9.9f, 9.9f), player.position.y, player.position.z));
+#endif
         }
     }
     

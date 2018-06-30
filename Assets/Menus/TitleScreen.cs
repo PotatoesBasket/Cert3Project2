@@ -6,6 +6,7 @@ public class TitleScreen : MonoBehaviour
 {
     private GameManager gameManager;
     public GameObject deer;
+    public GameObject exitButton;
     private float radius = 15f;
     private float speed = 0.2f;
     private bool offsetIsCenter = true;
@@ -25,6 +26,9 @@ public class TitleScreen : MonoBehaviour
 
     private void Start()
     {
+#if UNITY_WEBGL
+        exitButton.SetActive(false);
+#endif
         coverFadeOut.Play();
     }
 
